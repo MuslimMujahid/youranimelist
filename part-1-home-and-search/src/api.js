@@ -1,7 +1,7 @@
 export const FANTASY_ID = "10";
 
 export async function getTopAnime(query) {
-  const searchParams = new URLSearchParams(query);
+  const searchParams = new URLSearchParams({ ...query, sfw: true });
 
   const res = await fetch(
     `${
@@ -13,7 +13,7 @@ export async function getTopAnime(query) {
 }
 
 export async function getSeasonNowAnime(query) {
-  const searchParams = new URLSearchParams(query);
+  const searchParams = new URLSearchParams({ ...query, sfw: true });
 
   const res = await fetch(
     `${
@@ -25,7 +25,7 @@ export async function getSeasonNowAnime(query) {
 }
 
 export async function getAnimeSearch(query) {
-  const searchParams = new URLSearchParams(query);
+  const searchParams = new URLSearchParams({ ...query, sfw: true });
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_API_URL}/anime?${searchParams.toString()}`
