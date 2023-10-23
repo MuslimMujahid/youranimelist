@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import SearchInput from "./SearchInput";
 
-export default function Headbar() {
+export default function HeaderSearchInput() {
   const router = useRouter();
 
   function handleSearch(event) {
@@ -19,15 +19,10 @@ export default function Headbar() {
   }
 
   return (
-    <div className="px-12 py-8 flex justify-between items-center sticky top-0 bg-black">
-      <a className="font-bold" href="/home">
-        YOURANIMELIST
-      </a>
-      <SearchInput
-        placeholder="Search ..."
-        onChange={handleSearch}
-        onKeyDown={handleSearchKey}
-      />
-    </div>
+    <SearchInput
+      placeholder="Search ..."
+      onChange={handleSearch}
+      onKeyDown={handleSearchKey}
+    />
   );
 }

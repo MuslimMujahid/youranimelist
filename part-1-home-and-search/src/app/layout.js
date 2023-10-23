@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import Headbar from "@/components/Headbar";
+import HeaderSearchInput from "@/components/HeaderSearchInput";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Headbar />
+        <div className="px-12 py-8 flex justify-between items-center sticky top-0 bg-black">
+          <a className="font-bold" href="/home">
+            YOURANIMELIST
+          </a>
+          <HeaderSearchInput />
+        </div>
         <main className="py-8 px-12">{children}</main>
       </body>
     </html>
