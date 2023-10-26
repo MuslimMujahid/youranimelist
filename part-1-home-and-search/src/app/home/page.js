@@ -8,10 +8,11 @@ import MovieList from "@/components/MovieList";
 import { mapToMovieCard } from "@/utils";
 
 export default async function HomePage() {
-  const topAnimeData = getTopAnime({ limit: 6 });
-  const seasonAnimeData = getSeasonNowAnime({ limit: 6 });
+  const topAnimeData = getTopAnime({ limit: 6, sfw: true });
+  const seasonAnimeData = getSeasonNowAnime({ limit: 6, sfw: true });
   const fantasyAnimeData = getAnimeSearch({
     limit: 6,
+    sfw: true,
     genres: FANTASY_ID,
     start_date: "2023-01-01",
   });

@@ -3,7 +3,7 @@ import { getAnimeSearch } from "@/api";
 import { mapToMovieCard } from "@/utils";
 
 export default async function SearchContent({ query }) {
-  const animeSearch = await getAnimeSearch({ limit: 20, q: query });
+  const animeSearch = await getAnimeSearch({ limit: 20, q: query, sfw: true });
   const animeList = animeSearch.data.map(mapToMovieCard);
 
   if (animeList.length === 0) {
